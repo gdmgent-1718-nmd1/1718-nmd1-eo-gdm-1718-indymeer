@@ -1,3 +1,5 @@
+
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -16,3 +18,179 @@ img {
 }
 
 /* Voeg jouw css hieraan toe */
+@import url('https://fonts.googleapis.com/css?family=Karla');
+@font-face {
+    font-family: 'Lemon/Milk';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lemon/Milk'), url('fonts/LemonMilk.woff') format('woff');
+    }
+
+
+ /* HEADERS */
+section{
+
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    margin: 80px auto;
+    padding: 30px;
+    -webkit-box-shadow: 0px 0px 36px -2px rgba(196,196,196,1);
+    -moz-box-shadow: 0px 0px 36px -2px rgba(196,196,196,1);
+    box-shadow: 0px 0px 36px -2px rgba(196,196,196,1);
+}
+
+
+
+#headings {
+    background-color:#0F152C; 
+    color: #FFF;
+}
+.header1{
+    font-family: 'Lemon/Milk', sans-serif;
+    color: #5FE9F8;
+    font-size: 134px;
+    letter-spacing: 200;
+    text-shadow: #000 3px 5px 10px;
+    text-transform: uppercase;
+}
+.header2{
+    font-family: 'Karla', sans-serif;
+    color: #000;
+    font-size: 101px;
+    text-transform: uppercase;
+}
+
+.header3{
+    font-family: 'Karla', sans-serif;
+    color: #FFF;
+    font-size: 60px;
+}
+
+
+/* COLOR */
+
+.color-list {
+    display: flex;
+    /* 
+      On small displays we want each .color stacked.
+      Flexbox let's us determine stacking direction via
+      flex-direction: column;
+    */
+    flex-direction: column;
+    height: 50vh;
+  }
+  
+  .color {
+    /*
+      Each .color is also a flex item. We do this so that we have reasonable
+      distribution of space between elements. We use flex-direction so that
+      flexbox knows which way to position each element (in this case, vertical).
+    */
+    display: flex;
+    flex-direction: column;
+    
+    /*
+      .color can grow but not shrink (we want space for first three elements).
+      10em is enough space to see name, hsl, and hex values. 
+      Try shrinking vertically on a small display.
+    */
+    flex: 1 0 10em;  
+    box-shadow: 0 0 30px #424242;
+    
+    /* Handles any clipping/overflow issues on transition */
+    overflow: hidden;
+    padding: 1em;
+    color: white;
+    transition: flex-basis 500ms ease-in-out;
+  }
+  
+  .color:hover {
+    /*
+      Change the flex-basis so that we know what
+      size to transition to on hover. Arbitrary,
+      based on our design/content.
+    */
+    flex-basis: 20em;
+  }
+  
+  .color:hover .details {
+    opacity: 1;
+  }
+  
+  .name {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  .details {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+  
+  .details li {
+    font-size: 1em;
+    line-height: 2em;
+  }
+  
+  @media (min-width: 600px) {
+    .color-list {
+      /*
+        Change the direction so that each .color
+        aligns horizontally
+      */
+      flex-direction: row;
+    }
+    
+    .color {
+      /*
+        No scrollbars on mobile
+      */
+      flex-shrink: 1;
+    }
+  }
+  
+
+/* BUTTONS */
+
+.btn {
+    margin: 10px;
+    width: 323.92px;
+    height: 67.93px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 50px;
+    display: block;
+    line-height: 57px;
+   }
+
+  .btn:hover {
+    background-position: right center; 
+  }
+  
+  .btn-1 {
+    background-image: linear-gradient(to right, #FF0077 0%, #F45916 51%, #3416F4 100%);
+  }
+
+  .btn-2{
+      background-color: #629E4C;
+  }
+
+  .btn:nth-child(n+2){
+      width: 200px;
+      height: 60px;
+      border-radius: 0px;
+      margin-top: 3%;
+  }
+  .btn:hover:nth-child(n+2){
+    background-color: rgb(66, 102, 52);
+  }
+
+

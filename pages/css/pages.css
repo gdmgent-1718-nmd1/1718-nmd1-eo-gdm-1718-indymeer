@@ -72,33 +72,20 @@ section{
 
 .color-list {
     display: flex;
-    /* 
-      On small displays we want each .color stacked.
-      Flexbox let's us determine stacking direction via
-      flex-direction: column;
-    */
+    
     flex-direction: column;
     height: 50vh;
   }
   
   .color {
-    /*
-      Each .color is also a flex item. We do this so that we have reasonable
-      distribution of space between elements. We use flex-direction so that
-      flexbox knows which way to position each element (in this case, vertical).
-    */
+
     display: flex;
     flex-direction: column;
     
-    /*
-      .color can grow but not shrink (we want space for first three elements).
-      10em is enough space to see name, hsl, and hex values. 
-      Try shrinking vertically on a small display.
-    */
+
     flex: 1 0 10em;  
     box-shadow: 0 0 30px #424242;
     
-    /* Handles any clipping/overflow issues on transition */
     overflow: hidden;
     padding: 1em;
     color: white;
@@ -106,11 +93,7 @@ section{
   }
   
   .color:hover {
-    /*
-      Change the flex-basis so that we know what
-      size to transition to on hover. Arbitrary,
-      based on our design/content.
-    */
+  
     flex-basis: 20em;
   }
   
@@ -138,17 +121,12 @@ section{
   
   @media (min-width: 600px) {
     .color-list {
-      /*
-        Change the direction so that each .color
-        aligns horizontally
-      */
+   
       flex-direction: row;
     }
     
     .color {
-      /*
-        No scrollbars on mobile
-      */
+
       flex-shrink: 1;
     }
   }
